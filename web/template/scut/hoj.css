@@ -19,6 +19,16 @@ input{
    height:24px;
 }
 
+.btn{
+    margin-left: 3px;
+    margin-right: 1px;
+}
+
+.oj-footer{
+
+
+}
+
 .toprow {
     background-color: #1A5CC8;
     color: #FFFFFF;
@@ -51,6 +61,7 @@ input{
 body {
     background-color: #FFFFFF;
     background-image: url("image/background.jpg");
+    padding-top:40px;
 }
 .hd {
     color: #FFFFFF;
@@ -177,13 +188,25 @@ div.content {
     z-index: 6;
 }
 #foot {
-    height: 133px;
-    position: static;
-    text-align: center;
+    position: fixed;
     visibility: visible;
     width: 100%;
     z-index: 7;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 38px;
+    z-index: 32;
+    background-color: #242a2f;
+    box-shadow: 0 0px 13px #000000;
+    opacity: 0.95;
+    color: #fff;
 }
+.intent{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
 #logo {
     position: static;
     vertical-align: middle;

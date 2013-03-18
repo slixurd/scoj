@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -44,16 +45,17 @@ backgroundColor: { colors: ["#fff", "#eee"] }
 <body>
 <div id="wrapper">
 	<?php require_once("oj-header.php");?>
-<div id=main>
-	<center>
-	<div id=submission style="width:600px;height:300px" ></div>
-	</center>
-	<?php echo $view_news?>
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
-
-</div><!--end foot-->
-</div><!--end main-->
+  <div id="main">
+    <div class="hero-unit">
+      <center>
+        <div id="submission" style="width:600px;height:300px"></div>
+      </center>
+      <?php echo $view_news?>
+     <div id=foot>
+       <?php require_once("oj-footer.php");?>
+     </div><!--end foot-->
+    </div>
+  </div><!--end main-->
 </div><!--end wrapper-->
 </body>
 </html>
