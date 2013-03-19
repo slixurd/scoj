@@ -6,15 +6,12 @@
 	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <body>
-<div id="wrapper">
-	<?php require_once("oj-header.php");?>
-<div id=main>
+<?php require_once("oj-header.php");?>
+<div class="container buttomspace">
+<div class="row">
+<div class="span12">
 
-
-
-<div id=center class="input-append">
-<?php 
-?>
+<center><!-- this is the search toolbar -->
 <form id=simform action="status.php" method="get">
 <?php echo $MSG_PROBLEM_ID?>:<input class="input-mini" style="height:24px" type=text size=4 name=problem_id value='<?php echo $problem_id?>'>
 <?php echo $MSG_USER?>:<input class="input-mini" style="height:24px" type=text size=4 name=user_id value='<?php echo $user_id?>'>
@@ -28,9 +25,9 @@ else echo "<option value='-1'>All</option>";
 $i=0;
 foreach ($language_name as $lang){
         if ($i==$language) 
-		echo "<option value=$i selected>$language_name[$i]</option>";
+    echo "<option value=$i selected>$language_name[$i]</option>";
         else 
-		echo "<option value=$i>$language_name[$i]</option>";
+    echo "<option value=$i>$language_name[$i]</option>";
         $i++;
 }
 ?>
@@ -69,81 +66,62 @@ echo "</select>";
                         <option value=90 ".($showsim==90?'selected':'').">90</option>
                         <option value=100 ".($showsim==100?'selected':'').">100</option>
                   </select>";
-/*      if (isset($_GET['cid'])) 
-                echo "<input type=hidden name=cid value='".$_GET['cid']."'>";
-        if (isset($_GET['language'])) 
-                echo "<input type=hidden name=language value='".$_GET['language']."'>";
-        if (isset($_GET['user_id'])) 
-                echo "<input type=hidden name=user_id value='".$_GET['user_id']."'>";
-        if (isset($_GET['problem_id'])) 
-                echo "<input type=hidden name=problem_id value='".$_GET['problem_id']."'>";
-        //echo "<input type=submit>";
-*/
-        
-        
-        
+
 }
 echo "<input type=submit class='input'  value='$MSG_SEARCH'></form>";
 ?>
-</div>
+</center>
+<table id=result-tab class="table table-striped content-box-header darkshadow" align=center width=80%>
+  <thead>
+    <tr  class='success toprow' >
+      <th ><?php echo $MSG_RUNID?>
+      <th ><?php echo $MSG_USER?>
+      <th ><?php echo $MSG_PROBLEM?>
+      <th ><?php echo $MSG_RESULT?>
+      <th ><?php echo $MSG_MEMORY?>
+      <th ><?php echo $MSG_TIME?>
+      <th ><?php echo $MSG_LANG?>
+      <th ><?php echo $MSG_CODE_LENGTH?>
+      <th ><?php echo $MSG_SUBMIT_TIME?>
+    </tr>
+  </thead>
+  <tbody>
+      <?php 
+      $cnt=0;
+      foreach($view_status as $row){
+        if ($cnt) 
+          echo "<tr class='oddrow'>";
+        else
+          echo "<tr class='evenrow'>";
+        foreach($row as $table_cell){
+          echo "<td>";
+          echo "\t".$table_cell;
+          echo "</td>";
+        }
+        
+        echo "</tr>";
+        
+        $cnt=1-$cnt;
+      }
+      ?>
+  </tbody>
 
-<div id=center>
-<table id=result-tab class="table table-striped content-box-header" align=center width=80%>
-<thead>
-<tr  class='success toprow' >
-<th ><?php echo $MSG_RUNID?>
-<th ><?php echo $MSG_USER?>
-<th ><?php echo $MSG_PROBLEM?>
-<th ><?php echo $MSG_RESULT?>
-<th ><?php echo $MSG_MEMORY?>
-<th ><?php echo $MSG_TIME?>
-<th ><?php echo $MSG_LANG?>
-<th ><?php echo $MSG_CODE_LENGTH?>
-<th ><?php echo $MSG_SUBMIT_TIME?>
-</tr>
-</thead>
-
-<tbody>
-			<?php 
-			$cnt=0;
-			foreach($view_status as $row){
-				if ($cnt) 
-					echo "<tr class='oddrow'>";
-				else
-					echo "<tr class='evenrow'>";
-				foreach($row as $table_cell){
-					echo "<td>";
-					echo "\t".$table_cell;
-					echo "</td>";
-				}
-				
-				echo "</tr>";
-				
-				$cnt=1-$cnt;
-			}
-			?>
-			</tbody>
 </table>
-
+<div class="btn-group status-button">
+    <?php echo "<button class='btn'><a href=status.php?".$str2.">Top</a></button>";
+    if (isset($_GET['prevtop']))
+            echo "<button class='btn'><a href=status.php?".$str2."&top=".$_GET['prevtop'].">Previous Page</a></button>";
+    else
+            echo "<button class='btn'><a href=status.php?".$str2."&top=".($top+20).">Previous Page</a></button>";
+    echo "<button class='btn'><a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a></button>";
+    ?>
 </div>
-<div id=center>
-<?php echo "[<a href=status.php?".$str2.">Top</a>]&nbsp;&nbsp;";
-if (isset($_GET['prevtop']))
-        echo "[<a href=status.php?".$str2."&top=".$_GET['prevtop'].">Previous Page</a>]&nbsp;&nbsp;";
-else
-        echo "[<a href=status.php?".$str2."&top=".($top+20).">Previous Page</a>]&nbsp;&nbsp;";
-echo "[<a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a>]";
-?>
+</div> 
+</div >
 </div>
-
-
-
 <div id=foot>
-	<?php require_once("oj-footer.php");?>
-
+  <?php require_once("oj-footer.php");?>
 </div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
 </body>
 <script type="text/javascript">
   var i=0;
@@ -151,7 +129,7 @@ echo "[<a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a>]"
   foreach($judge_result as $result){
     echo "'$result',";
   }
-?>''];
+  ?>''];
 //alert(judge_result[0]);
 function findRow(solution_id){
     var tb=window.document.getElementById('result-tab');

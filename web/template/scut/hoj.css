@@ -1,4 +1,5 @@
 @import url(../../bootstrap/css/bootstrap.css);
+@import url(../../bootstrap/css/bootstrap-responsive.css)
 a {
     color: #1A5CC8;
     text-decoration: none;
@@ -14,6 +15,30 @@ h2 {
     width: 95%;
     position: relative;
     left: 2.5%;
+
+}
+
+.problemset{
+    text-align: center;
+}
+
+.buttomspace{
+    margin-bottom: 50px;
+}
+
+.darkshadow{
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+}
+
+.status-button{
+    text-align: center;
+    font-size: 15px;
+
 }
 input{
    height:24px;
@@ -60,7 +85,7 @@ input{
 }
 body {
     background-color: #FFFFFF;
-    background-image: url("image/background.jpg");
+    background-image: url("../../image/back.png");
     padding-top:40px;
 }
 .hd {
@@ -128,8 +153,53 @@ div.content {
     font-size: 18px;
     white-space: pre;
 }
+.mainpage{
+    padding: 20px 20px 50px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+}
+
+.hero-unit{
+      margin-top: 5px;
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+      transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+#submission .base{
+    z-index: 0;
+}
+
+#submission{
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.top-container .span5{
+    background: #eeeeee;
+    margin:2px;
+    padding: 8px 10px 8px;
+    text-indent: 16pt;
+    border-radius: 5px;
+}
+
+.aliancenter{
+    margin:inherit;
+    padding:0 20px;
+
+}
+
 #head {
-    height: 53px;
     position: static;
     text-align: center;
     visibility: visible;
@@ -187,6 +257,14 @@ div.content {
     width: 100%;
     z-index: 6;
 }
+
+.usericon{
+    margin-top:3px;
+}
+.usermail{
+    margin-top: 2px;
+}
+
 #foot {
     position: fixed;
     visibility: visible;

@@ -2,16 +2,23 @@
 <div id="head">
 	  <div class="navbar">
 	  	<div class="navbar-inner navbar-fixed-top">
+		  	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	        </a>
+	        <a  class='brand'  href="<?php echo $OJ_HOME?>"><i class="icon-home icon-white"></i>
+					<?php echo $OJ_NAME?>						
+			</a>
+			<div class="nav-collapse">
 	  		<ul class="nav">
 
-				<a  class='brand'  href="<?php echo $OJ_HOME?>"><i class="icon-home icon-white"></i>
-					<?php echo $OJ_NAME?>						
-				</a>
-
+				
+	  			<!-- Waiting for editting the constest-header and then we will reveal this page>
 				<li  class='<?php if ($url==$OJ_BBS.".php") echo "$ACTIVE";?>'>
 					<a href="bbs.php"><i class="icon-comment icon-white"></i><?php echo $MSG_BBS?></a>
 				</li>
-				
+				<! -->
 				<li class=' <?php if ($url=="problemset.php") echo "$ACTIVE";?>'>
 					<a href="problemset.php"><i class="icon-question-sign icon-white" ></i><?php echo $MSG_PROBLEMS?></a>
 				</li>
@@ -45,17 +52,12 @@
 							  <script type="text/javascript">dictInit();</script>
 				<?php }?>
 
-			</ul>
-				<div class="pull-right" >
+			</ul>	
+			</div>
+				<div  class="pull-right" >
 					<script src="include/profile.php?<?php echo rand();?>" ></script>
 				</div><!--end profile-->
 		</div>
 	</div><!--end menu-->
 
 </div><!--end subhead-->
-<div id=broadcast class="container">
-<marquee id=broadcast scrollamount=1 direction=up scrolldelay=250 onMouseOver='this.stop()' onMouseOut='this.start()';>
-  <?php echo $view_marquee_msg?>
-</marquee>
-</div>
-<br>

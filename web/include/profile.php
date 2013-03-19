@@ -26,13 +26,16 @@ header("Pragma: no-cache");
 
 		if (isset($_SESSION['user_id'])){
 				$sid=$_SESSION['user_id'];
-				$profile.= "<i class='icon-user icon-white'></i><a class='brand ' href=./modifypage.php>$MSG_USERINFO</a>;<a class='brand pull-right' href='./userinfo.php?user=$sid'><span id=red>$sid</span></a>";
+				$profile.= "<ul class='nav'><li class='divider-vertical'></li>\
+				<li><a style='font-size:17px;' href='./userinfo.php?user=$sid'><span id=red><i  class='icon-user icon-white usericon'></i>$sid</span></a></li>\
+				 <li class='divider-vertical'></li>\
+				 <li><a href=./modifypage.php>$MSG_USERINFO</a></li>";
 				$mail=checkmail();
 				if ($mail)
-					$profile.= "<i class='icon-envelope icon-white'></i><a class='brand '  href=./mail.php>$mail</a>";
-        $profile.="<a class='brand' href='./status.php?user_id=$sid'><span id='red'>Recent</span></a>";
+					$profile.= "<li><a href=./mail.php><i class='icon-envelope icon-white usermail'></i>$mail</a></li>";
+        $profile.="<li><a href='./status.php?user_id=$sid'><span id='red'>Recent</span></a></li>";
                                 
-				$profile.= "<a class='brand ' href=./logout.php>$MSG_LOGOUT</a>";
+				$profile.= "<li><a  href=./logout.php>$MSG_LOGOUT</a></li></ul>";
 			}else{
 				$profile.= "<form class='navbar-form ' action='./login.php' method='post'>\
 				<input class='span2' name='user_id' type='text' placeholder='User ID'>\
