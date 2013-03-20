@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php require_once("oj-header.php");?>
-<div class="container">
+<div class="container buttomspace">
 <div class="row">
 <div class="span12">
 	<div class="listheader">
@@ -16,7 +16,7 @@
 	</div>
 
 	<div class="contest-table">
-		<table class="table table-striped darkshadow spacetop">
+		<table class="table table-striped darkshadow spacetop ">
 		<thead>
 			<tr class="toprow">
 				<th class="span1">ID</th>

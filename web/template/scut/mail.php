@@ -5,9 +5,11 @@
 	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <body>
-<div id="wrapper">
-	<?php require_once("oj-header.php");?>
-<div id=main>
+<?php require_once("oj-header.php");?>
+<div class="container buttomspace mainpage">
+
+<div class="rpw">
+	<div class="span12">
 	<center>
 	<?php
 	if($view_content)
@@ -25,7 +27,7 @@
 	<tr>
 		<td>  To:<input name=to_user size=10 value="<?php echo $to_user?>">
 			Title:<input name=title size=20 value="<?php echo $title?>">
-		    <input type=submit value=<?php echo $MSG_SUBMIT?>></td>
+		    <input class="btn" style="margin-bottom:12px;" type=submit value=<?php echo $MSG_SUBMIT?>></td>
 	</tr>
 	<tr><td> 
 		<textarea name=content rows=10 cols=80 class="input input-xxlarge"></textarea>
@@ -33,7 +35,7 @@
 	 </td></tr>
 	</form>
    </table>
-   <table border=1>
+   <table class="table">
    <tr><td>Mail ID<td>From:Title<td>Date</tr>
    <tbody>
 			<?php 
@@ -58,11 +60,12 @@
 	</table>
 </center> 
 	 
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
 
-</div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
+</div>
+</div>
+</div>
+<div id="foot">
+	<?php require_once("oj-footer.php");?>
+</div>
 </body>
 </html>

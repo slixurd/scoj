@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php require_once("contest-header.php");?>
-<div class="container-fluid">
+<div class="container-fluid buttomspace">
 	<div class="row-fluid">
 		<div class="span3">
 
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 		<div class="span9">
-			<table id='problemset'  class="table darkshadow">
+			<table id='problemset'  class="table table-striped darkshadow">
 			<thead>
 				<tr align="center" class='toprow'>
 					<th class="span1"></th>

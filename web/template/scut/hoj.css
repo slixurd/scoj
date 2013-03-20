@@ -338,3 +338,38 @@ div.content {
 .aligh-left{
     text-align:left;
 }
+
+.subnav-faq{
+    font-size: 18px;
+}
+
+.problemquote{
+    padding: 20px 20px 50px;
+    margin: 12px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+}
+
+.problemquote>h2{
+    text-align: center;
+
+}
+
+.list-head{
+    padding: 10px;
+    margin: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
