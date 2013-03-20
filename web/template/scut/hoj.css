@@ -38,7 +38,13 @@ h2 {
 .status-button{
     text-align: center;
     font-size: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    clear: both;
 
+}
+.status-button .btn{
+    float:none;
 }
 input{
    height:24px;
@@ -290,3 +296,45 @@ div.content {
     vertical-align: middle;
 }
 
+.spansearch{
+    float: right;
+}
+.tableheader{
+
+    margin-top: 20px;
+}
+
+.align-btn{
+    margin-bottom: auto;
+}
+
+.listheader{
+    text-align: center;
+}
+
+.spacetop{
+    margin-top: 12px;
+}
+
+.center-td td{
+    text-align: center;
+}
+
+.contest-h1{
+    font-size: 25px;
+    margin-top: 55px;
+    vertical-align: center;
+}
+
+.description{
+    word-break:break-all;
+    overflow: auto;
+    white-space: normal;
+    width:220px;
+    margin-top: 20px;
+
+}
+
+.aligh-left{
+    text-align:left;
+}

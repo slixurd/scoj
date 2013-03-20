@@ -5,38 +5,55 @@
 	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <body>
-<div id="wrapper">
-	<?php require_once("oj-header.php");?>
-<div id=main>
+<?php require_once("oj-header.php");?>
+<div class="container">
+<div class="row">
+<div class="span12">
+	<div class="listheader">
+		<h2 >Contest List</h2>
+		<span >ServerTime:</span>
+		<span id="nowdate"></span>
+	</div>
 
-<center>
-<table width=90%><h2>Contest List</h2>ServerTime:<span id=nowdate></span><tr class=toprow align=center><td width=10%>ID<td width=50%>Name<td width=30%>Status<td width=10%>Private</tr>
-
-	<tbody>
-			<?php 
-			$cnt=0;
-			foreach($view_contest as $row){
-				if ($cnt) 
-					echo "<tr class='oddrow'>";
-				else
-					echo "<tr class='evenrow'>";
-				foreach($row as $table_cell){
-					echo "<td>";
-					echo "\t".$table_cell;
-					echo "</td>";
+	<div class="contest-table">
+		<table class="table table-striped darkshadow spacetop">
+		<thead>
+			<tr class="toprow">
+				<th class="span1">ID</th>
+				<th class="span5">Name</th>
+				<th class="span4">Status</th>
+				<th class="span2">Private</th>
+			</tr>
+		</thead>
+		<tbody>
+				<?php 
+				$cnt=0;
+				foreach($view_contest as $row){
+					if ($cnt) 
+						echo "<tr class='oddrow'>";
+					else
+						echo "<tr class='evenrow'>";
+					foreach($row as $table_cell){
+						echo "<td>";
+						echo "\t".$table_cell;
+						echo "</td>";
+					}
+					
+					echo "</tr>";
+					
+					$cnt=1-$cnt;
 				}
-				
-				echo "</tr>";
-				
-				$cnt=1-$cnt;
-			}
-			?>
-			</tbody>		
-
-</table></center>
-
-
-		
+				?>
+		</tbody>		
+		</table>
+	</div>
+</div>
+</div>
+</div>
+<div id="foot">
+	<?php require_once("oj-footer.php");?>
+</div><!--end foot-->
+</body>
 <script>
 var diff=new Date("<?php echo date("Y/m/d H:i:s")?>").getTime()-new Date().getTime();
 //alert(diff);
@@ -60,11 +77,4 @@ function clock()
     } 
     clock();
 </script>
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
-
-</div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
-</body>
 </html>

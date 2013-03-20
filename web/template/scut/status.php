@@ -68,10 +68,10 @@ echo "</select>";
                   </select>";
 
 }
-echo "<input type=submit class='input'  value='$MSG_SEARCH'></form>";
+echo "<input type='submit' class='input'  value='$MSG_SEARCH'></form>";
 ?>
 </center>
-<table id=result-tab class="table table-striped content-box-header darkshadow" align=center width=80%>
+<table id='result-tab' class="table table-striped content-box-header darkshadow" align='center'>
   <thead>
     <tr  class='success toprow' >
       <th ><?php echo $MSG_RUNID?>
@@ -107,14 +107,16 @@ echo "<input type=submit class='input'  value='$MSG_SEARCH'></form>";
   </tbody>
 
 </table>
-<div class="btn-group status-button">
-    <?php echo "<button class='btn'><a href=status.php?".$str2.">Top</a></button>";
+<div class="btn-group status-button" >
+  <center>
+    <?php echo "<button class='btn' ><a href=status.php?".$str2.">Top</a></button>";
     if (isset($_GET['prevtop']))
             echo "<button class='btn'><a href=status.php?".$str2."&top=".$_GET['prevtop'].">Previous Page</a></button>";
     else
             echo "<button class='btn'><a href=status.php?".$str2."&top=".($top+20).">Previous Page</a></button>";
-    echo "<button class='btn'><a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a></button>";
+    echo "<button class='btn leftspace'><a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a></button>";
     ?>
+  </center>
 </div>
 </div> 
 </div >

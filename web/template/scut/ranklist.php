@@ -5,28 +5,35 @@
 	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <body>
-<div id="wrapper">
-	<?php require_once("oj-header.php");?>
-<div id=main>
-	<table align=center width=90%>
+<?php require_once("oj-header.php");?>
+
+<div class="container">
+<div class="row">
+<div class="span12 buttomspace ">
+<div class="tableheader">
+<form action="userinfo.php">
+	<?php echo $MSG_USER?>
+	<input name="user" class="align-btn"></input>
+	<button type="submit" class="btn" value="Go">Go</button>
+	<div class="spansearch btn-group">
+		<button class="btn"><a href=ranklist.php?scope=d>Day</a></button>
+		<button class="btn"><a href=ranklist.php?scope=w>Week</a></button>
+		<button class="btn"><a href=ranklist.php?scope=m>Month</a></button>
+		<button class="btn"><a href=ranklist.php?scope=y>Year</a></button>
+</div>
+</form>
+
+</div>
+<div class="darkshadow">
+	<table class="table table-striped">
 		<thead>
-		<tr><td colspan=3 align=left>
-			<form action=userinfo.php>
-				<?php echo $MSG_USER?><input name=user>
-				<input type=submit value=Go>
-			</form></td><td colspan=3 align=right>
-			<a href=ranklist.php?scope=d>Day</a>
-			<a href=ranklist.php?scope=w>Week</a>
-			<a href=ranklist.php?scope=m>Month</a>
-			<a href=ranklist.php?scope=y>Year</a>
-			</td></tr>
-		<tr class='toprow'>
-				<td width=5% align=center><b><?php echo $MSG_Number?></b>
-				<td width=10% align=center><b><?php echo $MSG_USER?></b>
-				<td width=55% align=center><b><?php echo $MSG_NICK?></b>
-				<td width=10% align=center><b><?php echo $MSG_AC?></b>
-				<td width=10% align=center><b><?php echo $MSG_SUBMIT?></b>
-				<td width=10% align=center><b><?php echo $MSG_RATIO?></b>
+		<tr class='toprow center-td'>
+				<td class="span1" align="center"><b><?php echo $MSG_Number?></b>
+				<td class="span2" align="center"><b><?php echo $MSG_USER?></b>
+				<td class="span2" align="center"><b><?php echo $MSG_NICK?></b>
+				<td class="span2" align="center"><b><?php echo $MSG_AC?></b>
+				<td class="span2" align="center"><b><?php echo $MSG_SUBMIT?></b>
+				<td class="span3" align="center"><b><?php echo $MSG_RATIO?></b>
 		</tr>
 		</thead>
 		<tbody>
@@ -48,27 +55,29 @@
 				$cnt=1-$cnt;
 			}
 			?>
-			</tbody>		
+		</tbody>		
 	</table>
+</div>
 	<?php 
-	   echo "<center>";
+	   echo "<center class='status-button'>";
 		for($i = 0; $i <$view_total ; $i += $page_size) {
-			echo "<a href='./ranklist.php?start=" . strval ( $i ).($scope?"&scope=$scope":"") . "'>";
+			echo "<button class='span1 btn'><a href='./ranklist.php?start=" . strval ( $i ).($scope?"&scope=$scope":"") . "'>";
 			echo strval ( $i + 1 );
 			echo "-";
 			echo strval ( $i + $page_size );
-			echo "</a>&nbsp;";
+			echo "</a></button>";
 			if ($i % 250 == 200)
 				echo "<br>";
 		}
 		echo "</center>";
 	
 	?>
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
 
+</div><!-- end span -->
+</div><!-- end row -->
+</div><!-- end container -->
+<div id="foot">
+	<?php require_once("oj-footer.php");?>
 </div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
 </body>
 </html>
