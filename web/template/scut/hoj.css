@@ -373,3 +373,51 @@ div.content {
     margin-right: auto;
     
 }
+
+
+.summit-head{
+    padding: 10px;
+    margin: 12px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.summit-btn  .btn{
+    float: none;
+    margin-right: -4;
+}
+
+.textarea{
+    padding:5px;
+    padding-left: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.common-header{
+    padding: 10px;
+    margin: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+    margin-left: auto;
+    margin-right: auto;
+}

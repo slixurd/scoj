@@ -35,7 +35,7 @@ if (isset($_GET['pid']))
 	  		<ul class="nav">
 
 				<li class=' <?php if ($url=="problemset.php") echo "$ACTIVE";?>'>
-					<a href='./bbs.php?cid=<?php echo $cid?>'>
+					<a href='./contest.php?cid=<?php echo $cid?>'>
 						<i class="icon-question-sign icon-white"></i>
 						<?php echo $MSG_PROBLEMS?>
 					</a>

@@ -7,32 +7,83 @@
 ?>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel=stylesheet href='../include/hoj.css' type='text/css'>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+	<link rel=stylesheet href='../template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <?php if(isset($_GET['cid']))
 	$cid=intval($_GET['cid']);
 if (isset($_GET['pid']))
 	$pid=intval($_GET['pid']);
 ?>
-<table width=100% class=toprow><tr align=center>
-	<td width=15%><a class=hd href='../'><?php echo $MSG_HOME?></a>
-	<td width=15%><a class=hd href='../bbs.php?cid=<?php echo $cid?>'><?php echo $MSG_BBS?></a>
-	<td width=15%><a class=hd href='../contest.php?cid=<?php echo $cid?>'><?php echo $MSG_PROBLEMS?></a>
-	<td width=15%><a class=hd href='../contestrank.php?cid=<?php echo $cid?>'><?php echo $MSG_STANDING?></a>
-	<td width=15%><a class=hd href='../status.php?cid=<?php echo $cid?>'><?php echo $MSG_STATUS?></a>
-	<td width=15%><a class=hd href='../conteststatistics.php?cid=<?php echo $cid?>'><?php echo $MSG_STATISTICS?></a>
-</tr></table>
 
-<div id=broadcast>
-<?php
+<div id="head">
+	  <div class="navbar">
+	  	<div class="navbar-inner navbar-fixed-top">
+		  	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	        </a>
+	        <a  class='brand'  href="../"><i class="icon-home icon-white"></i>
+					<?php echo $OJ_NAME?>						
+			</a>
+			<div class="nav-collapse">
+	  		<ul class="nav">
 
-	echo "<marquee id=broadcast scrollamount=1 direction=up scrolldelay=250 onMouseOver='this.stop()' onMouseOut='this.start()';>";
-	require('../admin/msg.txt');
-	echo "</marquee>";
+				<li class=' <?php if ($url=="problemset.php") echo "$ACTIVE";?>'>
+					<a href='../bbs.php?cid=<?php echo $cid?>'>
+						<i class="icon-question-sign icon-white"></i>
+						<?php echo $MSG_BBS?>
+					</a>
+				</li>
 
-?>
-</div><!--end broadcast-->
+				<li class=' <?php if ($url=="problemset.php") echo "$ACTIVE";?>'>
+					<a href='../contest.php?cid=<?php echo $cid?>'>
+						<i class="icon-question-sign icon-white"></i>
+						<?php echo $MSG_PROBLEMS?>
+					</a>
+				</li>
+
+
+				<li class=' <?php if ($url=="status.php") echo "  $ACTIVE";?>'>
+					<a href='../contestrank.php?cid=<?php echo $cid?>'>
+						<i class="icon-check icon-white"></i>
+						<?php echo $MSG_STANDING?>
+					</a>
+				</li>
+				
+				<li class=' <?php if ($url=="ranklist.php") echo "  $ACTIVE";?>'>
+					<a  href='../status.php?cid=<?php echo $cid?>'>
+						<i class="icon-signal icon-white"></i>
+						<?php echo $MSG_STATUS?>
+					</a>
+				</li>
+
+				<li class=' <?php if ($url=="contest.php") echo "  $ACTIVE";?>'>
+					<a href='../conteststatistics.php?cid=<?php echo $cid?>'>
+						<i class="icon-fire icon-white"></i>
+						<?php echo $MSG_STATISTICS?>
+					</a>
+				</li>
+
+					<?php if(isset($OJ_DICT)&&$OJ_DICT&&$OJ_LANG=="cn"){?>
+					<span div class=' '  style="color:1a5cc8" id="dict_status"></span>
+								  <script src="include/underlineTranslation.js" type="text/javascript"></script>
+								  <script type="text/javascript">dictInit();</script>
+					<?php }?>
+
+			</ul>	
+			</div>
+				<div  class="pull-right" >
+					<script src="include/profile.php?<?php echo rand();?>" ></script>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+
+
 <?php
 $contest_ok=true;
 $str_private="SELECT count(*) FROM `contest` WHERE `contest_id`='$cid' && `private`='1'";
@@ -42,4 +93,3 @@ mysql_free_result($result);
 if ($row[0]=='1' && !isset($_SESSION['c'.$cid])) $contest_ok=false;
 if (isset($_SESSION['administrator'])) $contest_ok=true;
 ?>
-<div id=main>

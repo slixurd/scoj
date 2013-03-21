@@ -1,7 +1,7 @@
 <?php $ACTIVE="active";?>
 <div id="head">
 	  <div class="navbar">
-	  	<div class="navbar-inner navbar-fixed-top">
+	  	<div class="navbar-inner navbar-fixed-top" style="visibility: visible; position: fixed;">
 		  	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
