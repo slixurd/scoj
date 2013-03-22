@@ -5,12 +5,13 @@
         <link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <body>
-<div id="wrapper">
-        <?php require_once("oj-header.php");?>
-<div id=main>
-        <form action=lostpassword.php method=post>
+ <?php require_once("oj-header.php");?>
+<div class="container">
+<div class="row">
+<div class="hero-unit">
+        <form action="lostpassword.php" method="post">
         <center>
-        <table width=400 algin=center>
+        <table width=400 algin="center">
         <tr><td width=200><?php echo $MSG_USER_ID?>:<td width=200><input name="user_id" type="text" size=20></tr>
         <tr><td><?php echo $MSG_EMAIL?>:<td><input name="email" type="text" size=20></tr>
         
@@ -24,11 +25,12 @@
         <center>
 </form>
 
-<div id=foot>
+</div>
+</div>
+</div>
+<div id="foot">
         <?php require_once("oj-footer.php");?>
-
 </div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
+
 </body>
 </html>

@@ -5,14 +5,21 @@
 	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <body>
-<div id="wrapper">
 	<?php require_once("oj-header.php");?>
-<div id=main>
-	<center>
-		<h3>current online user: <?php echo $on->get_num()?></h3>
-		<table style="margin:auto;width:98%">
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+
+		<h3 class="list-head">current online user: <?php echo $on->get_num()?></h3>
+		<table style="margin:auto;width:98%" class="table table-striped">
 		<thead>
-		<tr class=toprow><th style="width: 50px">ip</th><th>uri</th><th>refer</th><th style="width:100px">stay time</th><th>user agent</th></tr>
+		<tr class="toprow">
+			<th class="span2">ip</th>
+			<th class="span2">uri</th>
+			<th class="span2">refer</th>
+			<th class="span2">stay time</th>
+			<th class="span4">user agent</th>
+		</tr>
 		</thead>
 		<tbody>
 		<?php 
@@ -35,15 +42,18 @@
 		
 		if(isset($_SESSION['administrator'])){
 		
-			echo "<tr><td width='100%' colspan='5'><form>IP<input type='text' name='search'><input type='submit' value='$MSG_SEARCH' ></form></td></tr>";
+			echo "<tr class='list-head'><td colspan='4'></td><td width='100%' colspan='6'>
+			<form>IP<input type='text' name='search'>
+			<input type='submit' value='$MSG_SEARCH' >
+			</form></td></tr>";
 	  
 			
 			?>
-			</tbody>
-			</table>
-			<table>
+		</tbody>
+	</table>
+			<table style="margin-top:50px; margin-left:auto;margin-right:auto;">
 			<tbody>
-         <tr  class=toprow align=center ><td>UserID<td>Password<td>IP<td>Time</tr>
+         <tr  class="toprow" align="center" ><td>UserID<td>Password<td>IP<td>Time</tr>
 				<?php 
 				$cnt=0;
 				foreach($view_online as $row){
@@ -67,12 +77,14 @@
 		}
 		?>
 		</table>
-		</center>
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
 
-</div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
+	</div>
+</div>
+</div>
+
+<div id="foot">
+	<?php require_once("oj-footer.php");?>
+</div>
+
 </body>
 </html>

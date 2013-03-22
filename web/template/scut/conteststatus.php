@@ -8,14 +8,14 @@
 <body>
 <div id="wrapper">
 	<?php require_once("contest-header.php");?>
-<div id=main>
+<div id="main">
 
 
 
-<div id=center>
+<div id="center">
 <?php 
 ?>
-<form id=simform action="status.php" method="get">
+<form id="simform" action="status.php" method="get">
 <?php echo $MSG_PROBLEM_ID?>:<input class="input-small" style="height:24px" type=text size=4 name=problem_id value='<?php echo $problem_id?>'>
 <?php echo $MSG_USER?>:<input  class="input-mini" style="height:24px" type=text size=4 name=user_id value='<?php echo $user_id?>'>
 <?php if (isset($cid)) echo "<input type='hidden' name='cid' value='$cid'>";?>
@@ -64,27 +64,16 @@ echo "</select>";
                         <option value=80 ".($showsim==80?'selected':'').">80</option>
                         <option value=90 ".($showsim==90?'selected':'').">90</option>
                         <option value=100 ".($showsim==100?'selected':'').">100</option>
-                  </select>";
-/*      if (isset($_GET['cid'])) 
-                echo "<input type=hidden name=cid value='".$_GET['cid']."'>";
-        if (isset($_GET['language'])) 
-                echo "<input type=hidden name=language value='".$_GET['language']."'>";
-        if (isset($_GET['user_id'])) 
-                echo "<input type=hidden name=user_id value='".$_GET['user_id']."'>";
-        if (isset($_GET['problem_id'])) 
-                echo "<input type=hidden name=problem_id value='".$_GET['problem_id']."'>";
-        //echo "<input type=submit>";
-*/
-        
+                  </select>";        
         
         
 }
-echo "<input class=btn type=submit value='$MSG_SEARCH' /></form>";
+echo "<input class='btn align-btn' type=submit value='$MSG_SEARCH'  /></form>";
 ?>
 </div>
 
-<div id=center>
-<table id=result-tab class="table table-striped content-box-header" align=center width=80%>
+<div id="center">
+<table id="result-tab" class="table table-striped content-box-header" align=center width=80%>
 <thead>
 <tr  class='success toprow'>
 <th ><?php echo $MSG_RUNID?>
@@ -119,24 +108,24 @@ echo "<input class=btn type=submit value='$MSG_SEARCH' /></form>";
 </table>
 
 </div>
-<div id=center>
-<?php echo "[<a href=status.php?".$str2.">Top</a>]&nbsp;&nbsp;";
+<div id="center" class="btn-group buttomspace" style="margin-left:auto; margin-right:auto;float:center;">
+<?php echo "<button class='btn' style='margin-left:auto; margin-right:auto;float:center;'><a href=status.php?".$str2.">Top</a></button>";
 if (isset($_GET['prevtop']))
-        echo "[<a href=status.php?".$str2."&top=".$_GET['prevtop'].">Previous Page</a>]&nbsp;&nbsp;";
+        echo "<button class='btn' style='margin-left:auto; margin-right:auto;float:center;'><a href=status.php?".$str2."&top=".$_GET['prevtop'].">Previous Page</a></button>";
 else
-        echo "[<a href=status.php?".$str2."&top=".($top+20).">Previous Page</a>]&nbsp;&nbsp;";
-echo "[<a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a>]";
+        echo "<button class='btn' style='margin-left:auto; margin-right:auto;float:center;'><a href=status.php?".$str2."&top=".($top+20).">Previous Page</a></button>";
+echo "<button class='btn' style='margin-left:auto; margin-right:auto;float:center;'><a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a></button>";
 ?>
 </div>
 
 
 
-<div id=foot>
+<div id="foot">
 	<?php require_once("oj-footer.php");?>
-
 </div><!--end foot-->
 </div><!--end main-->
 </div><!--end wrapper-->
+
 <script type="text/javascript">
   var i=0;
   var judge_result=[<?php

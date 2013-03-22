@@ -5,12 +5,18 @@
 	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <body>
-<div id="wrapper">
 	<?php require_once("oj-header.php");?>
-<div id=main>
-	
-<pre id='errtxt' class="alert alert-error"><?php echo $view_reinfo?></pre>
-<div id='errexp'>Explain:</div>
+
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <div class="hero-unit">
+        <pre id='errtxt' class="alert alert-error"><?php echo $view_reinfo?></pre>
+        <div id='errexp'>Explain:</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
    var pats=new Array();
@@ -49,11 +55,10 @@
  
  </script>
  
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
 
-</div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
+
+<div id="foot">
+	<?php require_once("oj-footer.php");?>
+</div>
 </body>
 </html>

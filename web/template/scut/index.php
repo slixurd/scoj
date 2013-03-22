@@ -66,7 +66,7 @@ backgroundColor: { colors: ["#fff", "#eee"] }
           </div>
           <div class="span5">
 
-                SCOJ基于开源的HUSTOJ改版，无法向HUSTOJ兼容。基于相同的GPLv2发布。文档基于CC-BY-ND 2.0发布。代码托管在<a href="https://github.com/slixurd/scoj">GITGUB</a>
+                SCOJ基于开源的HUSTOJ改版，template无法向HUSTOJ兼容。基于相同的GPLv2发布。文档基于CC-BY-NC 2.0发布。代码托管在<a href="https://github.com/slixurd/scoj">GITHUB</a>
           </div>
       </div>
       </div>

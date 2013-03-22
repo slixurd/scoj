@@ -5,9 +5,10 @@
 	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 </head>
 <body>
-<div id="wrapper">
-	<?php require_once("oj-header.php");?>
-<div id=main>
+   <?php require_once("oj-header.php");?>
+<div id="wrapper" class="container">
+	
+<div id="main " >
 	
 <pre id='errtxt' class="alert alert-error"><?php echo $view_reinfo?></pre>
 <div id='errexp'>Explain:</div>

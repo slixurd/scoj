@@ -4,12 +4,12 @@
 	require_once('./include/cache_start.php');
     require_once('./include/db_info.inc.php');
 	require_once('./include/setlang.php');
-	$view_title= "Welcome To Online Judge";
+	$view_title= "Online Judge";
 	
 require_once("./include/const.inc.php");
 if (!isset($_GET['sid'])){
-	echo "No such code!\n";
-	require_once("oj-footer.php");
+	echo "WRONG WAY TO ARRIVED HERE!\n";
+	require("template/".$OJ_TEMPLATE."/oj-footer.php");
 	exit(0);
 }
 function is_valid($str2){

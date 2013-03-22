@@ -168,6 +168,15 @@ div.content {
     -moz-box-shadow: 0 0 18px 0 #242a2f;
 }
 
+.register{
+    padding: 10px 10px 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+}
+
 .hero-unit{
       margin-top: 5px;
       border-radius: 5px;
