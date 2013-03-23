@@ -23,7 +23,7 @@
 	?>
 <div class="container buttomspace">
 <div class="row">
-	<div class="span12">
+	<div class="span12 problem-hr">
 		<?php
 			if ($pr_flag){
 				echo "<title>$MSG_PROBLEM $row->problem_id. -- $row->title</title>";
@@ -49,9 +49,9 @@
 			
 			echo "</center>";
 			
-			echo "<div class='problemquote'><h2 class='center'>$MSG_Description</h2>".$row->description."</div>";
-			echo "<div class='problemquote'><h2>$MSG_Input</h2>".$row->input."</div>";
-			echo "<div class='problemquote'><h2>$MSG_Output</h2>".$row->output."</div>";
+			echo "<div class='problemquote'><h2 class='center'>$MSG_Description</h2>".$row->description."<hr/>";
+			echo "<h2>$MSG_Input</h2>".$row->input."<hr/>";
+			echo "<h2>$MSG_Output</h2>".$row->output."<hr/>";
 			
 			$ie6s="";
 			$ie6e="";
@@ -65,15 +65,15 @@
 			$soutput=str_replace("<","&lt;",$row->sample_output);
 		  $soutput=str_replace(">","&gt;",$soutput);
 			echo "
-					<div class='problemquote'><h2>$MSG_Sample_Input</h2><span class=sampledata>".$ie6s.($sinput).$ie6e."</span></div>";
+					<h2>$MSG_Sample_Input</h2><span class=sampledata>".$ie6s.($sinput).$ie6e."</span><hr/>";
 			echo "
-					<div class='problemquote'><h2>$MSG_Sample_Output</h2><span class=sampledata>".$ie6s.($soutput).$ie6e."</span></div>";
+					<h2>$MSG_Sample_Output</h2><span class=sampledata>".$ie6s.($soutput).$ie6e."</span><hr/>";
 			if ($pr_flag||true) 
 				echo "
-					<div class='problemquote'><h2>$MSG_HINT</h2><p>".nl2br($row->hint)."</p></div>";
+					<h2>$MSG_HINT</h2><p>".nl2br($row->hint)."</p><hr/>";
 			if ($pr_flag) 
 				echo "
-					<div class='problemquote'><h2>$MSG_Source</h2><p><a href='problemset.php?search=$row->source'>".nl2br($row->source)."</a></p></div>";
+					<h2>$MSG_Source</h2><p><a href='problemset.php?search=$row->source'>".nl2br($row->source)."</a></p></div>";
 			echo "<center>";
 			if ($pr_flag){
 				echo "[<a href='submitpage.php?id=$id'>$MSG_SUBMIT</a>]";

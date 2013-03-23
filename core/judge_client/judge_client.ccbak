@@ -814,16 +814,16 @@ int compile(int lang) {
         pid = fork();
         if (pid == 0) {
                 struct rlimit LIM;
-                LIM.rlim_max = 600;
-                LIM.rlim_cur = 600;
+                LIM.rlim_max = 60;
+                LIM.rlim_cur = 60;
                 setrlimit(RLIMIT_CPU, &LIM);
 
-                LIM.rlim_max = 900 * STD_MB;
-                LIM.rlim_cur = 900 * STD_MB;
+                LIM.rlim_max = 90 * STD_MB;
+                LIM.rlim_cur = 90 * STD_MB;
                 setrlimit(RLIMIT_FSIZE, &LIM);
 
-                LIM.rlim_max = 2048 * STD_MB;
-                LIM.rlim_cur = 2048 * STD_MB;
+                LIM.rlim_max = 1024 * STD_MB;
+                LIM.rlim_cur = 1024 * STD_MB;
                 setrlimit(RLIMIT_AS, &LIM);
                 if (lang != 2) {
                         freopen("ce.txt", "w", stderr);
@@ -1208,7 +1208,7 @@ void copy_python_runtime(char * work_dir) {
         execute_cmd("mkdir %s/usr", work_dir);
         execute_cmd("mkdir %s/usr/lib", work_dir);
         execute_cmd("cp /usr/bin/python* %s/", work_dir);
-        execute_cmd("cp /usr/lib/libpython* %s/usr/lib/", work_dir);
+
 }
 void copy_php_runtime(char * work_dir) {
 
@@ -1240,9 +1240,8 @@ void copy_mono_runtime(char * work_dir) {
         execute_cmd("mkdir %s/usr", work_dir);
         execute_cmd("mkdir %s/proc", work_dir);
         execute_cmd("mkdir -p %s/usr/lib/mono/2.0", work_dir);
+
         execute_cmd("cp -a /usr/lib/mono %s/usr/lib/", work_dir);
-        execute_cmd("mkdir -p %s/usr/lib64/mono/2.0", work_dir);
-        execute_cmd("cp -a /usr/lib64/mono %s/usr/lib64/", work_dir);
 
         execute_cmd("cp /usr/lib/libgthread* %s/usr/lib/", work_dir);
 
@@ -1406,7 +1405,7 @@ void judge_solution(int & ACflg, int & usedtime, int time_lmt, int isspj,
         //usedtime-=1000;
         int comp_res;
         if(!oi_mode) num_of_test=1.0;
-        if (ACflg == OJ_AC && usedtime > time_lmt * 1000*(use_max_time?1:num_of_test))
+        if (ACflg == OJ_AC && usedtime > time_lmt * 1000*(num_of_tes))
                 ACflg = OJ_TL;
         if(topmemory>mem_lmt * STD_MB) ACflg=OJ_ML; //issues79
         // compare
@@ -1500,7 +1499,7 @@ void watch_solution(pid_t pidApp, char * infile, int & ACflg, int isspj,
                         ptrace(PTRACE_KILL, pidApp, NULL, NULL);
                         break;
                 }
-                  //sig = status >> 8;/*status >> 8 Ã¥Â·Â®Ã¤Â¸ÂÃ¥Â¤Å¡Ã¦ËÂ¯EXITCODE*/
+                  //sig = status >> 8;/*status >> 8 Ã¥Â·Â®Ã¤Â¸ÂÃ¥Â¤Å¡Ã¦ËÂ¯EXITCODE*/
 
                 if (WIFEXITED(status))
                         break;
@@ -1830,7 +1829,7 @@ int main(int argc, char** argv) {
         char userfile[BUFFER_SIZE];
         sprintf(fullpath, "%s/data/%d", oj_home, p_id); // the fullpath of data dir
 
-
+		
 
         // open DIRs
         DIR *dp;
