@@ -4,7 +4,7 @@
     if($OJ_VCODE&&($vcode!= $_SESSION["vcode"]||$vcode==""||$vcode==null) ){
 		echo "<script language='javascript'>\n";
 		echo "alert('Verify Code Wrong!');\n";
-		echo "history.go(-1);\n";
+		echo ";\n";
 		echo "</script>";
 		exit(0);
     }
@@ -27,13 +27,13 @@
 		while ($result&&$row=mysql_fetch_assoc($result))
 			$_SESSION[$row['rightstr']]=true;
 		echo "<script language='javascript'>\n";
-		echo "history.go(-2);\n";
+		echo "history.go(-1);\n";
 		echo "</script>";
 	}else{
 		
 		echo "<script language='javascript'>\n";
 		echo "alert('UserName or Password Wrong!');\n";
-		echo "history.go(-1);\n";
+		echo "\n";
 		echo "</script>";
 	}
 ?>
