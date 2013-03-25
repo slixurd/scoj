@@ -5,3 +5,10 @@
 
  @import url(../bootstrap/css/bootstrap.css);
 
+.menu-btn{
+	color: #0088cc;
+	text-decoration: none;
+	line-height: 18px;
+	text-align: -webkit-match-parent;
+	display: list-item;
+}
