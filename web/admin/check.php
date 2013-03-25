@@ -13,8 +13,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+
+
+
 <div class="container-fluid">
-	<div class="row-fluid">
+<div class="navbar">
+ 	<div class="navbar-inner navbar-fixed-top" style="visibility: visible; position: fixed;">
+ 		<a  class='brand'  href="<?php echo $OJ_HOME?>">
+			ADMIN PANEL					
+		</a>
+</div>
+</div>
+	<div class="row-fluid top-space">
+
+
 		<div class="span3">
 
 			<?php require_once("menu.php") ?>
