@@ -26,19 +26,15 @@
 </div>
 </div>
 	<div class="row-fluid top-space">
-		<div class="span2">
-			<div class="menu-group">
+		<div class="span2" >
+			<div class="menu-group"  >
 				<?php require_once("menu.php") ?>
 			</div>
+			<div>&nbsp;</div>
 		</div>
 		<div class="span10">
+			<div class="">
 			<?php if (isset($_SESSION['administrator'])){
-				if(isset($_POST['news_add'])){
-					require("news_add_page.php");
-				}
-				if(isset($_POST['news_list'])){
-					require("news_list.php");
-				}
 				if(isset($_POST['problem_add_page'])){
 					require("problem_add_page.php");
 				}
@@ -93,6 +89,7 @@
 
 			}
 			?>
+		</div>
 		</div>
 
 </body>

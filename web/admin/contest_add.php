@@ -1,9 +1,6 @@
-<?php require_once("admin-header.php");?>
-<meta http-equiv="Content-Type" content="text/html; charset=utf8">
-<title>Add a contest</title>
+
 
 <?php
-
 	require_once("../include/const.inc.php");
 $description="";
  if (isset($_POST['syear']))
@@ -122,21 +119,21 @@ else if(isset($_POST['problem2contest'])){
 	
 	<form method=POST >
 	<p align=center><font size=4 color=#333399>Add a Contest</font></p>
-	<p align=left>Title:<input class=input-xxlarge  type=text name=title size=71 value="<?php echo isset($title)?$title:""?>"></p>
-	<p align=left>Start Time:<br>&nbsp;&nbsp;&nbsp;
+	<p align=center>Title:<input class=input-xxlarge  type=text name=title size=71 value="<?php echo isset($title)?$title:""?>"></p>
+	<p align=center>Start Time:<br>&nbsp;&nbsp;&nbsp;
 	Year:<input  class=input-mini type=text name=syear value=<?php echo date('Y')?> size=4 >
 	Month:<input class=input-mini  type=text name=smonth value=<?php echo date('m')?> size=2 >
 	Day:<input class=input-mini type=text name=sday size=2 value=<?php echo date('d')?> >&nbsp;
 	Hour:<input class=input-mini    type=text name=shour size=2 value=<?php echo date('H')?>>&nbsp;
 	Minute:<input class=input-mini    type=text name=sminute value=00 size=2 ></p>
-	<p align=left>End Time:<br>&nbsp;&nbsp;&nbsp;
+	<p align=center>End Time:<br>&nbsp;&nbsp;&nbsp;
 	Year:<input class=input-mini    type=text name=eyear value=<?php echo date('Y')?> size=4 >
 	Month:<input class=input-mini    type=text name=emonth value=<?php echo date('m')?> size=2 >
 	
 	Day:<input class=input-mini  type=text name=eday size=2 value=<?php echo date('d')+(date('H')+4>23?1:0)?>>&nbsp;
 	Hour:<input class=input-mini  type=text name=ehour size=2 value=<?php echo (date('H')+4)%24?>>&nbsp;
 	Minute:<input class=input-mini  type=text name=eminute value=00 size=2 ></p>
-	Public:<select name=private><option value=0>Public</option><option value=1>Private</option></select>
+	<div align=center>Public:<select name=private><option value=0>Public</option><option value=1>Private</option></select>
 	Language:<select name="lang[]" multiple="multiple"    style="height:220px">
 	<?php
 $lang_count=count($language_ext);
@@ -152,11 +149,11 @@ $lang_count=count($language_ext);
 ?>
 
 
-        </select>
+        </select></div>
 	<?php require_once("../include/set_post_key.php");?>
-	<br>Problems:<input class=input-xxlarge type=text size=60 name=cproblem value="<?php echo isset($plist)?$plist:""?>">
-	<br>
-	<p align=left>Description:<br><!--<textarea rows=13 name=description cols=80></textarea>-->
+	<div align=center>Problems:<input class=input-xxlarge type=text size=60 name=cproblem value="<?php echo isset($plist)?$plist:""?>">
+	</div>
+	<p align=center>Description:<br><!--<textarea rows=13 name=description cols=80></textarea>-->
 
 <?php
 $fck_description = new FCKeditor('description') ;
@@ -167,13 +164,13 @@ $fck_description->Value = $description ;
 $fck_description->Create() ;
 
 ?>
+	<br />
 	Users:<textarea name="ulist" rows="20" cols="20"></textarea>
 	<br />
 	*可以将学生学号从Excel整列复制过来，然后要求他们用学号做UserID注册,就能进入Private的比赛作为作业和测验。
 	<p><input type=submit value=Submit name=submit><input type=reset value=Reset name=reset></p>
 	</form>
 <?php }
-require_once("../oj-footer.php");
 
 ?>
 

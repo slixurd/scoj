@@ -16,20 +16,20 @@
 	?>
 	<form action="index.php" method="post">
 	<li>
-		<button class='menu-btn'  name="news_add"><b><?php echo $MSG_ADD.$MSG_NEWS?></b></button>
+		<button class='menu-btn'   name="news_add" ><a href="news_add_page.php"><?php echo $MSG_ADD.$MSG_NEWS?></a></button>
 	<li>
-		<button class='menu-btn'  name="news_list"><b><?php echo $MSG_NEWS.$MSG_LIST?></b></button>
+		<button class='menu-btn'  name="news_list"><a href="news_list.php"><?php echo $MSG_NEWS.$MSG_LIST?></a></button>
 		
 <?php }
 if (isset($_SESSION['administrator'])||isset($_SESSION['problem_editor'])){
 ?>
 	<li>
-		<button class='menu-btn' name="problem_add_page"><b><?php echo $MSG_ADD.$MSG_PROBLEM?></b></button>
+		<button class='menu-btn' name="problem_add_page"><a href="problem_add_page.php"><?php echo $MSG_ADD.$MSG_PROBLEM?></a></button>
 <?php }
 if (isset($_SESSION['administrator'])||isset($_SESSION['contest_creator'])||isset($_SESSION['problem_editor'])){
 ?>
 	<li>
-		<button class='menu-btn'  name="problem_list"><b><?php echo $MSG_PROBLEM.$MSG_LIST?></b></button>
+		<button class='menu-btn'  name="problem_list"><a href="problem_list.php"><?php echo $MSG_PROBLEM.$MSG_LIST?></a></button>
 <?php }
 if (isset($_SESSION['administrator'])||isset($_SESSION['contest_creator'])){
 ?>		

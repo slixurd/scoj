@@ -25,6 +25,7 @@
     -moz-box-shadow: 0 0 4px 0 #242a2f;
     background-image: -webkit-linear-gradient(bottom, #242a2f, #1a1f1b);
 
+
 }
 
 .top-space{
@@ -49,4 +50,58 @@ body{
     -webkit-box-shadow: 0 0 18px 0 #242a2f;
     -moz-box-shadow: 0 0 18px 0 #242a2f;
     min-width: 240px;
+}
+
+.align-center{
+	left:auto;
+	text-align:center;
+	text-align:-webkit-center;
+	vertical-align: center;
+
+}
+
+.clear-float{
+	float: none;
+}
+
+.btn-group .btn{
+	float: none;
+}
+
+div .bottom-space{
+    margin-bottom: 20px;
+}
+
+.marginTop{
+    margin-top: 10px;
+}
+
+.news-header{
+    padding-top: 10px;
+    font-size: 22px;
+}
+.news-content{
+    background:#f9f9f9;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+    min-width: 708px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+.h2-head{
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.h-head{
+    padding-top: 30px;
+    padding-bottom: 15px;
+    font-size: 28px;
 }
