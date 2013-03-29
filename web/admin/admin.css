@@ -73,7 +73,7 @@ div .bottom-space{
 }
 
 .marginTop{
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .news-header{
@@ -104,4 +104,69 @@ div .bottom-space{
     padding-top: 30px;
     padding-bottom: 15px;
     font-size: 28px;
+}
+
+.a-color{
+    color: #eee;
+}
+
+button a:hover{
+    color:#04ca3f;
+}
+
+.add-contest-p p{
+    text-align: center;
+}
+
+.add-contest-p input{
+    margin-bottom: 0;
+}
+
+.bk{
+    background:#f9f9f9;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 0 0 18px 0 #242a2f;
+    -webkit-box-shadow: 0 0 18px 0 #242a2f;
+    -moz-box-shadow: 0 0 18px 0 #242a2f;
+    min-width: 240px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.button-align input{
+    margin-bottom: 0;
+}
+
+.content-center{
+    margin-left:auto;margin-right:auto;margin-top:20px;
+    left:auto;
+    text-align:center;
+    text-align:-webkit-center;
+    vertical-align: center;
+
+}
+
+.padding-center{
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.content-center input{
+    margin-bottom: 0;
+}
+
+.content-center div{
+    padding-top: 5px;
+}
+
+.text-notcenter{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    text-align:center;
+    text-align:-webkit-center;
+    vertical-align: center;
+
 }

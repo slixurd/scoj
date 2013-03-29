@@ -35,18 +35,7 @@
 		<div class="span10">
 			<div class="">
 			<?php if (isset($_SESSION['administrator'])){
-				if(isset($_POST['problem_add_page'])){
-					require("problem_add_page.php");
-				}
-				if(isset($_POST['problem_list'])){
-					require("problem_list.php");
-				}	
-				if(isset($_POST['contest_add'])){
-					require("contest_add.php");
-				}	
-				if(isset($_POST['contest_list'])){
-					require("contest_list.php");
-				}	
+
 				if(isset($_POST['team_generate'])){
 					require("team_generate.php");
 				}	
