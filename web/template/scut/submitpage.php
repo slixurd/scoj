@@ -73,7 +73,7 @@ $lang_count=count($language_ext);
        
   $lang=(~((int)$langmask))&((1<<($lang_count))-1);
 if(isset($_COOKIE['lastlang'])) $lastlang=$_COOKIE['lastlang'];
- else $lastlang=0;
+ else $lastlang=1;
  for($i=0;$i<$lang_count;$i++){
                 if($lang&(1<<$i))
                  echo"<option value=$i ".( $lastlang==$i?"selected":"").">

@@ -40,7 +40,6 @@
 		if ($brush=='pascal') $brush='delphi';
 		if ($brush=='obj-c') $brush='c';
 		if ($brush=='freebasic') $brush='vb';
-		echo "<textarea rows='26' class='span12 darkshadow'>";
 		echo "<pre class=\"  brush:".$brush.";\">";
 		ob_start();
 		echo "/**************************************************************\n";
@@ -54,7 +53,9 @@
 		$auth=ob_get_contents();
 		ob_end_clean();
 
-		echo htmlspecialchars(str_replace("\n\r","\n",$view_source))."\n".$auth."</pre></textarea>";
+		echo htmlspecialchars(str_replace("\n\r","\n",$view_source))."\n".$auth."</pre><div class='clearfix'></div>";
+		echo "<style>.clearfix {  *zoom: 1;}.clearfix:before,.clearfix:after {  display: table;
+  content: '';  line-height: 0;}.clearfix:after {  clear: both;}</style>";
 		
 	}else{
 		echo "<div class='hero-unit container darkshadow' style='text-align: center; font-size:30px;'>I am sorry, You could not view this code!</div>";

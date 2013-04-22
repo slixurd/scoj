@@ -1,4 +1,7 @@
+
+
 <?php require("admin-header.php");
+//ATTENTION ,UNDER CONSTRUCTION
 include_once("../fckeditor/fckeditor.php") ;
 include_once("../include/const.inc.php");
 if (isset($_POST['syear']))
@@ -167,5 +170,4 @@ Users:<textarea name="ulist" rows="20" cols="20"><?php if (isset($ulist)) { echo
 <p><input type=submit value=Submit name=submit><input type=reset value=Reset name=reset></p>
 
 </form>
-<?php require_once("../oj-footer.php");?>
 

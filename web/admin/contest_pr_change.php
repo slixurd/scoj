@@ -8,7 +8,6 @@ $num=mysql_num_rows($result);
 if ($num<1){
 	mysql_free_result($result);
 	echo "No Such Problem!";
-	require_once("../oj-footer.php");
 	exit(0);
 }
 $row=mysql_fetch_row($result);

@@ -1,5 +1,5 @@
 <?php require_once ("admin-header.php");
-
+//UNDER CONSTRUCTION
 if (!(isset($_SESSION['administrator']))){
 	echo "<a href='../loginpage.php'>Please Login First!</a>";
 	exit(1);
@@ -28,9 +28,6 @@ $user_id=mysql_real_escape_string($user_id);
 	//echo $sql;
 	mysql_query($sql) or die(mysql_error());
 	
-	
-	
-	require_once("../oj-footer.php");
 	exit();
 }else{
 	$news_id=intval($_GET['id']);
@@ -70,5 +67,3 @@ $description->Create() ;
 <?php require_once("../include/set_post_key.php");?>
 <input type=submit>
 </form>
-<?php require_once("../oj-footer.php");?>
-

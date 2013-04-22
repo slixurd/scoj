@@ -73,6 +73,9 @@ backgroundColor: { colors: ["#fff", "#eee"] }
     </div>
       <div class="hero-unit">
           <div id="submission" style="width:600px;height:300px;"></div>
+          <div class='clearfix'></div>";
+    <style>.clearfix {  *zoom: 1;}.clearfix:before,.clearfix:after {  display: table;
+  content: '';  line-height: 0;}.clearfix:after {  clear: both;}</style>
       </div>
     </div><!--end main-->
 
