@@ -1,9 +1,9 @@
-
-
 <?php require("admin-header.php");
-//ATTENTION ,UNDER CONSTRUCTION
+
 include_once("../fckeditor/fckeditor.php") ;
 include_once("../include/const.inc.php");
+
+
 if (isset($_POST['syear']))
 {
 	require_once("../include/check_post_key.php");
@@ -107,67 +107,137 @@ if (isset($_POST['syear']))
 }
 ?>
 
-<form method=POST >
-<?php require_once("../include/set_post_key.php");?>
-<p align=center><font size=4 color=#333399>Edit a Contest</font></p>
-<input type=hidden name='cid' value=<?php echo $cid?>>
-<p align=left>Title:<input class=input-xxlarge type=text name=title size=71 value='<?php echo $title?>'></p>
-<p align=left>Start Time:<br>&nbsp;&nbsp;&nbsp;
-Year:<input class=input-mini  type=text name=syear value=<?php echo substr($starttime,0,4)?> size=4 >
-Month:<input class=input-mini  type=text name=smonth value='<?php echo substr($starttime,5,2)?>' size=2 >
-Day:<input class=input-mini  type=text name=sday size=2 value='<?php echo substr($starttime,8,2)?>'>
-Hour:<input class=input-mini  type=text name=shour size=2 value='<?php echo substr($starttime,11,2)?>'>
-Minute:<input class=input-mini  type=text name=sminute size=2 value=<?php echo substr($starttime,14,2)?>></p>
-<p align=left>End Time:<br>&nbsp;&nbsp;&nbsp;
 
-Year:<input class=input-mini  type=text name=eyear value=<?php echo substr($endtime,0,4)?> size=4 >
-Month:<input class=input-mini  type=text name=emonth value=<?php echo substr($endtime,5,2)?> size=2 >
-Day:<input class=input-mini  type=text name=eday size=2 value=<?php echo substr($endtime,8,2)?>>
-Hour:<input class=input-mini  type=text name=ehour size=2 value=<?php echo substr($endtime,11,2)?>> 
-Minute:<input class=input-mini  type=text name=eminute size=2 value=<?php echo substr($endtime,14,2)?>></p>
-
-Public/Private:<select name=private>
-	<option value=0 <?php echo $private=='0'?'selected=selected':''?>>Public</option>
-	<option value=1 <?php echo $private=='1'?'selected=selected':''?>>Private</option>
-</select>
-<br>Problems:<input class=input-xxlarge type=text size=60 name=cproblem value='<?php echo $plist?>'>
-
- Language:<select name="lang[]"  multiple="multiple"    style="height:220px">
-<?php
-$lang_count=count($language_ext);
+<html>
+	<head>
+		<title>OJ Administration</title>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel=stylesheet href='admin.css' type='text/css'>
+	</head>
+<body>
 
 
-  $lang=(~((int)$langmask))&((1<<$lang_count)-1);
-if(isset($_COOKIE['lastlang'])) $lastlang=$_COOKIE['lastlang'];
- else $lastlang=0;
- for($i=0;$i<$lang_count;$i++){
-               
-                 echo  "<option value=$i ".( $lang&(1<<$i)?"selected":"").">
-                        ".$language_name[$i]."
-                 </option>";
-  }
 
-?>
-	
-   </select>
-	
+<div class="container-fluid">
+	<?php require_once("admin-bar.php"); ?>
+	<div class="row-fluid top-space">
+		<div class="span2" >
+			<div class="menu-group"  >
+				<?php require_once("menu.php") ?>
+			</div>
+		</div>
+		<div class="span10">
+			<div class="">
+				<center><h2 class="bottom-space">Edit a Contest</h2></center>
+				<div class=" news-content" style="align:center">
+					<form method=POST >
 
-<br>
-<p align=left>Description:<br><!--<textarea rows=13 name=description cols=80></textarea>-->
+					<?php require_once("../include/set_post_key.php");?>
+					<input type=hidden name='cid' value=<?php echo $cid?> >
+					<p align=center style="padding-top:25px;">Title:
+						<input class=input-xxlarge type=text name=title size=71 value='<?php echo $title?>'>
+					</p>
+					<p align=center>
+						Start Time:
+					<br>&nbsp;&nbsp;&nbsp;
+					Year:
+						<input class=input-mini  type=text name=syear value=<?php echo substr($starttime,0,4)?> size=4 >
+					Month:
+						<input class=input-mini  type=text name=smonth value='<?php echo substr($starttime,5,2)?>' size=2 >
+					Day:
+						<input class=input-mini  type=text name=sday size=2 value='<?php echo substr($starttime,8,2)?>'>
+					Hour:
+						<input class=input-mini  type=text name=shour size=2 value='<?php echo substr($starttime,11,2)?>'>
+					Minute:
+						<input class=input-mini  type=text name=sminute size=2 value=<?php echo substr($starttime,14,2)?>></p>
+					<p align=center>
+						End Time:
+					<br>&nbsp;&nbsp;&nbsp;
 
-<?php
-$fck_description = new FCKeditor('description') ;
-$fck_description->BasePath = '../fckeditor/' ;
-$fck_description->Height = 300 ;
-$fck_description->Width=600;
+					Year:
+						<input class=input-mini  type=text name=eyear value=<?php echo substr($endtime,0,4)?> size=4 >
+					Month:
+						<input class=input-mini  type=text name=emonth value=<?php echo substr($endtime,5,2)?> size=2 >
+					Day:
+						<input class=input-mini  type=text name=eday size=2 value=<?php echo substr($endtime,8,2)?>>
+					Hour:
+						<input class=input-mini  type=text name=ehour size=2 value=<?php echo substr($endtime,11,2)?>> 
+					Minute:
+						<input class=input-mini  type=text name=eminute size=2 value=<?php echo substr($endtime,14,2)?>></p>
 
-$fck_description->Value = $description ;
-$fck_description->Create() ;
+					Public/Private:
+						<select name=private>
+							<option value=0 <?php echo $private=='0'?'selected=selected':''?>>Public</option>
+							<option value=1 <?php echo $private=='1'?'selected=selected':''?>>Private</option>
+						</select>
+					<br>Problems:<input class=input-xxlarge type=text size=60 name=cproblem value='<?php echo $plist?>'>
 
-?>
+					 Language:
+					 <select name="lang[]"  multiple="multiple"    style="height:220px">
 
-Users:<textarea name="ulist" rows="20" cols="20"><?php if (isset($ulist)) { echo $ulist; } ?></textarea>
-<p><input type=submit value=Submit name=submit><input type=reset value=Reset name=reset></p>
+						<?php
+							$lang_count=count($language_ext);
 
-</form>
+
+							  $lang=(~((int)$langmask))&((1<<$lang_count)-1);
+							if(isset($_COOKIE['lastlang'])) $lastlang=$_COOKIE['lastlang'];
+							 else $lastlang=0;
+							 for($i=0;$i<$lang_count;$i++){
+							               
+							                 echo  "<option value=$i ".( $lang&(1<<$i)?"selected":"").">
+							                        ".$language_name[$i]."
+							                 </option>";
+							  }
+
+						?>
+							
+					</select>
+						
+
+					<br>
+					<p align=left>
+						Description:
+						<br><!--<textarea rows=13 name=description cols=80></textarea>-->
+
+					<?php
+
+						$fck_description = new FCKeditor('description') ;
+						$fck_description->BasePath = '../fckeditor/' ;
+						$fck_description->Height = 300 ;
+						$fck_description->Width=600;
+
+						$fck_description->Value = $description ;
+						$fck_description->Create() ;
+					?>
+
+					Users:\
+					<textarea name="ulist" rows="20" cols="20">
+						<?php if (isset($ulist)) { echo $ulist; } ?>
+					</textarea>
+					<p>
+						<input type=submit value=Submit name=submit>
+						<input type=reset value=Reset name=reset>
+					</p>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
 

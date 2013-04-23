@@ -39,14 +39,25 @@ if (!(isset($_SESSION['administrator']))){
 			<div class="content-center" >
 				<div style="width:50%;" class="padding-center bk">
 				<form action='problem_export_xml.php' method=post>
-					<div style="font-size:22px;padding-bottom:10px;">Export Problem:</div>
-					<div>from pid:<input type=text size=10 name="start" value=1000>
-					to pid:<input type=text size=10 name="end" value=1000></div>
-					<div>or in<input type=text size=40 name="in" value=""></div>
-					<div><input type='hidden' name='do' value='do'>
-					<input type=submit name=submit value='Export'>
-				   <input type=submit value='Download'></div>
-				   <?php require_once("../include/set_post_key.php");?>
+					<div style="font-size:22px;padding-bottom:10px;">Export Problem:
+						<hr/>
+					</div>
+					<div>
+						from pid:
+						<input type=text size=10 name="start" value=1000>
+						to pid:
+						<input type=text size=10 name="end" value=1000>
+					</div>
+					<div>
+						or in
+						<input type=text size=40 name="in" value="">
+					</div>
+					<div>
+						<input type='hidden' name='do' value='do'>
+						<input type=submit name=submit value='Export'>
+				   		<input type=submit value='Download'>
+				   	</div>
+				  	<?php require_once("../include/set_post_key.php");?>
 				</form>
 				<p>* from-to will working will empty IN </p>
 				<p>* if using IN,from-to will not working.</p>

@@ -5,8 +5,8 @@ if (!(isset($_SESSION['administrator']))){
 	exit(1);
 }
 ?>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>News Edit</title>
+
+
 
 <?php require_once("../include/db_info.inc.php");
 if (isset($_POST['news_id']))
@@ -47,23 +47,66 @@ $user_id=mysql_real_escape_string($user_id);
 }
 ?>
 
-<form method=POST action='news_edit.php'>
-<p align=center><font size=4 color=#333399>Edit a Contest</font></p>
-<input type=hidden name='news_id' value=<?php echo $news_id?>>
-<p align=left>Title:<input type=text name=title size=71 value='<?php echo $title?>'></p>
+<html>
+<head>
+<title>OJ Administration</title>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href='admin.css' type='text/css'>
+</head>
+<body>
 
-<p align=left>Content:<br>
-<?php
-include_once("../fckeditor/fckeditor.php") ;
-$description = new FCKeditor('content') ;
-$description->BasePath = '../fckeditor/' ;
-$description->Height = 450 ;
-$description->Width=800;
 
-$description->Value = $content ;
-$description->Create() ;
-?>
-</p>
-<?php require_once("../include/set_post_key.php");?>
-<input type=submit>
-</form>
+<div class="container-fluid">
+
+	<?php require_once("admin-bar.php"); ?>
+	<div class="row-fluid top-space">
+		<div class="span2" >
+			<div class="menu-group"  >
+				<?php require_once("menu.php") ?>
+			</div>
+		</div>
+		<div class="span10">
+			<div class=" news-content">
+
+				<form method=POST action='news_edit.php'>
+
+				<p align=center>
+					<font size=4 color=#333399>Edit News</font>
+				</p>
+
+				<input type=hidden name='news_id' value=<?php echo $news_id?> >
+				<p align=center>
+					Title:
+					<input type=text name=title size=71 value='<?php echo $title?>'>
+				</p>
+
+				<p align=center>Content:
+					<br>
+					<?php
+						include_once("../fckeditor/fckeditor.php") ;
+						$description = new FCKeditor('content') ;
+						$description->BasePath = '../fckeditor/' ;
+						$description->Height = 450 ;
+						$description->Width=800;
+
+						$description->Value = $content ;
+						$description->Create() ;
+					?>
+				</p>
+				<?php require_once("../include/set_post_key.php");?>
+				<input type=submit>
+				</form>
+				<p>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+

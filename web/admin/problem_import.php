@@ -42,6 +42,7 @@
 					<P>or set upload_max_filesize and post_max_size in PHP.ini</P>
 					<P>if you fail on import big files[10M+],try enlarge your [memory_limit]  setting in php.ini.</P>
 				</div>
+				<div style="width:60%" >
 				<?php 
 				    $show_form=true;
 				   if(!isset($OJ_SAE)||!$OJ_SAE){
@@ -59,23 +60,29 @@
 					}	
 					if($show_form){
 				?>
-				<br><div  style="font-size:24px;margin-bottom: 10px;"><strong>Import Problem:</strong></div>
-				<form class="button-align" action='problem_import_xml.php' method=post enctype="multipart/form-data">
-					
-					
-					<input type=file name=fps>
-					<?php require_once("../include/set_post_key.php");?>
-				    <input type=submit value='Import' class="btn">
-				</form>
-				<?php 
-				  
-				   	}
-				   
-				?>
 				<br>
+				</div>
+				<div  class=" bk" style="width:60%">
+					<div  style="font-size:24px;margin-bottom: 10px;width:60%;">
+						<strong>Import Problem:</strong>
+						<hr/>
+					</div>
+					<form class="button-align" action='problem_import_xml.php' method=post enctype="multipart/form-data">
+						
+						
+						<input type=file name=fps>
+						<?php require_once("../include/set_post_key.php");?>
+					    <input type=submit value='Import' class="btn">
+					</form>
+					<?php 
+					  
+					   	}
+					   
+					?>
+					<br>
 
-				free problem set FPS-xml can be download at <a href=http://code.google.com/p/freeproblemset/downloads/list>FPS-Googlecode</a>
-
+					free problem set FPS-xml can be download at <a href=http://code.google.com/p/freeproblemset/downloads/list>FPS-Googlecode</a>
+				</div>
 			</div>
 		</div>
 	</div>

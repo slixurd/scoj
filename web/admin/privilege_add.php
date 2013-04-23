@@ -37,10 +37,13 @@ if(isset($_POST['do'])){
 		</div>
 		<div class="span10">
 			<div class="text-notcenter">
-				<div class="padding-center bk" style="width:50%">
+				<div class="padding-center bk" style="width:40%">
 				<form method=post>
 				<?php require("../include/set_post_key.php");?>
-					<div  style="font-size:24px;margin-bottom: 10px;margin-top: 15px;"><strong>Add privilege for User:</strong></div>
+					<div  style="font-size:24px;margin-bottom: 10px;margin-top: 15px;">
+						<strong>Add privilege for User:</strong>
+						<hr style="width:75%"/>
+					</div>
 					<p>User:</p><input type=text size=10 name="user_id"><br />
 					<p>Privilege:</p>
 					<select name="rightstr">
@@ -57,8 +60,12 @@ if(isset($_POST['do'])){
 					<input type='hidden' name='do' value='do'>
 					<input class="btn"  type=submit value='Add'>
 				</form>
+				<hr/>
 				<form method=post>
-					<div  style="font-size:24px;margin-bottom: 10px;"><strong>Add contest for User:</strong></div>
+					<div  style="font-size:24px;margin-bottom: 10px;">
+						<strong>Add contest for User:</strong>
+						<hr style="width:75%"/>
+					</div>
 					<p>User:</p><input type=text size=10 name="user_id"><br />
 					<p>ontest:</p><input type=text size=10 name="rightstr"><div>c1000 for Contest1000</div>
 					<input type='hidden' name='do' value='do'>

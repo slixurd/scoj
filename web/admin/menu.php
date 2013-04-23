@@ -89,9 +89,9 @@ if (isset($OJ_ONLINE)&&$OJ_ONLINE){
 
 <?php if (isset($_SESSION['administrator'])&&!$OJ_SAE){
 ?>
-	<li><div   title="Create your own data" class='btn menu-btn'>
+	<li><div   title="Create your own data" class='menu-btn'>
 		<a class="a-color" href="problem_copy.php">CopyProblem</a></div>
-	<li><div   title="Danger,Use it on your own risk" class='btn menu-btn'>
+	<li><div   title="Danger,Use it on your own risk" class='menu-btn'>
 		<a class="a-color" href="problem_changeid.php">ReOrderProblem</a></div>
 <?php }
 ?>
