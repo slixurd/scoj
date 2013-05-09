@@ -54,7 +54,7 @@ backgroundColor: { colors: ["#fff", "#eee"] }
             <span class="title" style="text-align: center;">公告</span>
           </div>
           <div class="span5">
-            <span class="title" style="text-align: center;">声明</span>
+            <span class="title" style="text-align: center;">语言切换</span>
           </div>
       </div>
     </div>
@@ -65,8 +65,9 @@ backgroundColor: { colors: ["#fff", "#eee"] }
             <blockquote class="pull-right">--SCOJ TEAM</blockquote>
           </div>
           <div class="span5">
-
-                SCOJ基于开源的HUSTOJ改版，template无法向HUSTOJ兼容。基于相同的GPLv2发布。文档基于CC-BY-NC 2.0发布。代码托管在<a href="https://github.com/slixurd/scoj">GITHUB</a>
+                <div>语言切换:<a href=setlang.php?lang=cn>中文</a> <a href=setlang.php?lang=en>English</a> </div>
+                <div>P.S. SCOJ基于开源的HUSTOJ改版。基于相同的GPLv2发布。文档基于CC-BY-NC 2.0发布。代码托管在<a href="https://github.com/slixurd/scoj">GITHUB</a>
+               </div>
           </div>
       </div>
       </div>
