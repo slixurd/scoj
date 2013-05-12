@@ -43,7 +43,10 @@
 				<a href="<?php echo isset($OJ_FAQ_LINK)?$OJ_FAQ_LINK:"faqs.php"?>">
 		                <i class="icon-info-sign icon-white"></i><?php echo "$MSG_FAQ"?></a>
 				</li>
-
+				<li class=' <?php if ($url==("tofreshman.php")) echo " $ACTIVE";?>'>
+				<a href="tofreshman.php">
+		                <i class="icon-info-sign icon-white"></i><?php echo "新手须知"?></a>
+				</li>
 				<?php if(isset($OJ_DICT)&&$OJ_DICT&&$OJ_LANG=="cn"){?>
 							  
 				<span div class=' '  style="color:1a5cc8" id="dict_status"></span>
